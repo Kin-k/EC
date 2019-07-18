@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d{HH:mm:ss} %-5level %logger.%M: %m%n%throwable}" disableAnsi="false"/>
+        </Console>
+
+        <File name="File" fileName="./target/log.txt">
+            <PatternLayout pattern="%d{HH:mm:ss} %-5level %logger.%M: %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="Console" level="WARN"/>
+            <AppenderRef ref="File" level="DEBUG"/>
+        </Root>
+
+       <Logger name="ec" level="DEBUG" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Logger>
+    </Loggers>
+</Configuration>

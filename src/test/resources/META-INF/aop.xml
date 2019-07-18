@@ -1,0 +1,7 @@
+<aspectj>
+    <weaver options="-Xset:weaveJavaxPackages=true">
+    </weaver>
+    <aspects>
+        <aspect name="ec.utils.CustomAllureAspect"/>
+    </aspects>
+</aspectj>
